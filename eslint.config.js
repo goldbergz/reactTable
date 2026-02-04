@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 
 export default {
-  root: true,
   env: {
     browser: true,
     es2021: true,
