@@ -8,7 +8,12 @@ interface TableRowProps {
   toggle: (id: number) => void;
 }
 
-const TableRow: React.FC<TableRowProps> = ({ node, level, expanded, toggle }) => {
+const TableRow: React.FC<TableRowProps> = ({
+  node,
+  level,
+  expanded,
+  toggle,
+}) => {
   const hasChildren = node.children && node.children.length > 0;
   const isExpanded = expanded[node.id];
 
@@ -20,10 +25,7 @@ const TableRow: React.FC<TableRowProps> = ({ node, level, expanded, toggle }) =>
       >
         <td className="p-2">
           {hasChildren && (
-            <button
-              className="expand-button"
-              onClick={() => toggle(node.id)}
-            >
+            <button className="expand-button" onClick={() => toggle(node.id)}>
               {isExpanded ? '▼' : '▶'}
             </button>
           )}
